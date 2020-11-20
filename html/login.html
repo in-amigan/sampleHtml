@@ -1,0 +1,67 @@
+<div class="container" ng-show="loginShow">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Login</h3>
+				</div>
+				<div class="panel-body">
+					<form accept-charset="UTF-8" role="form">
+						<fieldset>
+							<div class="form-group">
+								<input class="form-control" ng-model="loginEmail" placeholder="yourmail@example.com" name="email" type="text">
+							</div>
+							<div class="form-group">
+								<input class="form-control" ng-model="loginPassword" placeholder="Password" name="password" type="password" value="">
+							</div>
+							<input class="btn btn-lg btn-success btn-block" ng-click="login()" type="submit" value="Login">
+						</fieldset>
+					</form>
+					<hr/>
+					<center><h4>OR</h4></center>
+					<input class="btn btn-lg btn-primary btn-block" ng-click="signup()" type="submit" value="Sign Up">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container" ng-show="signupShow">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Signup</h3>
+				</div>
+				<div class="panel-body">
+					<form accept-charset="UTF-8" role="form">
+						<fieldset>
+							<div class="form-group">
+								<input class="form-control" placeholder="Full Name" ng-model="signFullName" type="text" required>
+							</div>
+							<div class="form-group">
+								<input class="form-control" placeholder="yourmail@example.com" ng-model="signEmail" type="email" required>
+							</div>
+							<div class="form-group">
+								<input class="form-control" placeholder="Password" ng-model="signPassword" type="password" value="" required>
+							</div>
+							<div class="form-group">
+								<input class="form-control" placeholder="Repeat Password" ng-model="signRepPassword" type="password" value="" required>
+							</div>
+
+							<div class="form-group">
+								<input class="form-control" placeholder="Phone" ng-model="signPhone" type="text" value="" required>
+							</div>
+							<div class="form-group">
+								<font color="red"> {{errorMessage}} </font>
+							</div>
+							<div><input class="btn btn-lg btn-primary btn-block" ng-click="saveUser()" type="submit" value="Sign Up"></div>
+							<br>
+							<div><input class="btn btn-lg btn-success btn-block" ng-click="loginFormShow()" value="Login"></div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

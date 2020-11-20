@@ -1,0 +1,120 @@
+<div>
+	<div class="row">
+		<div class="col-sm-12 col-lg-12 text-center"><img src="images/main_image.png" /></div>
+	</div>
+	<div class="row">&nbsp;</div>
+	<!-- <div class="well">
+		<div class="row">
+			<div class="col-sm-12 col-lg-12 text-center"><h1>Track Your Order</h1></div>
+		</div>	
+
+		<div class="text-center">
+			<div class="row">
+				<div class="col-sm-12 col-lg-12">
+					<label>Order Number:</label>
+					<input type="text" class="marginLeftRight30" ng-model="orderIdSearch"/>
+					<a href class="btn btn-info" ng-click="trackOrder()"> Track </a>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<div class="row">&nbsp;</div>
+	<div class="well">
+		<div class="row">
+			<div class="col-sm-12 col-lg-12 text-center"><h1>Today's Rates</h1></div>
+		</div>	
+		<div class="">
+			<div class="row">
+			<div class="col-sm-12 col-lg-12">
+					<table st-table="rowCollections" st-safe-src="rowCollection" class="table table-striped">
+						<thead>
+							<tr>
+								<th>Currency Type</th>
+								<th>Purchase @ Price/USD</th>
+								<th>Sell @ Price/USD</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="row in rowCollections track by $index">
+								<td><img src={{row.cur_type}} width="200px" /></td>
+								<td><font size="6">{{row.purchase_price}}</font></td>
+								<td><font size="6">{{row.sell_price}}</font></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- <div class="well">
+	<div class="row">
+		<div class="col-sm-12 col-lg-12 text-center"><h1>Selling Calculator</h1></div>
+	</div>	
+	<div class="row">
+		<div class="col-sm-12 col-lg-1 text-center"><h3>Sell</h3></div>
+		<div class="col-sm-12 col-lg-2 text-center"><input type="number" min="0.01" step="any" ng-model="convertAmount" class="form-control text-right marginTop18"></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href class="btn btn-primary" ng-click="wmtopm()">Web Money to Perfect Money</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href class="btn btn-primary" ng-click="wmtobc()">Web Money to Bitcoin</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href class="btn btn-primary" ng-click="bctopm()">Bitcoin to Perfect Money</a></div>
+	</div>	
+	<div class="row" ng-show="wmtopmon">
+		<div class="col-sm-12 col-lg-1 text-center"><h3>Web Money to Perfect Money</h3></div>
+		<div class="col-sm-12 col-lg-2 text-center"><input type="text" value="0.00" class="form-control text-right marginTop18"></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Web Money to Perfect Money</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Web Money to Bitcoin</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Bitcoin to Perfect Money</a></div>
+	</div>	
+	<div class="row" ng-show="wmtobcon">
+		<div class="col-sm-12 col-lg-1 text-center"><h3>Web Money to bit coin</h3></div>
+		<div class="col-sm-12 col-lg-2 text-center"><input type="text" value="0.00" class="form-control text-right marginTop18"></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Web Money to Perfect Money</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Web Money to Bitcoin</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Bitcoin to Perfect Money</a></div>
+	</div>	
+	<div class="row" ng-show="bctopmon">
+		<div class="col-sm-12 col-lg-1 text-center"><h3>Bit coin to Perfect Money</h3></div>
+		<div class="col-sm-12 col-lg-2 text-center"><input type="text" value="0.00" class="form-control text-right marginTop18"></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Web Money to Perfect Money</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Web Money to Bitcoin</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Bitcoin to Perfect Money</a></div>
+	</div>	 
+</div>
+
+<div class="well">
+	<div class="row">
+		<div class="col-sm-12 col-lg-12 text-center"><h1>Buying Calculator</h1></div>
+	</div>	
+	<div class="row">
+		<div class="col-sm-12 col-lg-1 text-center"><h3>Buy</h3></div>
+		<div class="col-sm-12 col-lg-2 text-center"><input type="number" min="0.01" step="any" ng-model="convertAmount" class="form-control text-right marginTop18"></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href class="btn btn-primary" ng-click="wmtopm()">Web Money to Perfect Money</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href class="btn btn-primary" ng-click="wmtobc()">Web Money to Bitcoin</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href class="btn btn-primary" ng-click="bctopm()">Bitcoin to Perfect Money</a></div>
+	</div>	
+	<div class="row" ng-show="wmtopmon">
+		<div class="col-sm-12 col-lg-1 text-center"><h3>Web Money to Perfect Money</h3></div>
+		<div class="col-sm-12 col-lg-2 text-center"><input type="text" value="0.00" class="form-control text-right marginTop18"></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Web Money to Perfect Money</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Web Money to Bitcoin</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Bitcoin to Perfect Money</a></div>
+	</div>	
+	<div class="row" ng-show="wmtobcon">
+		<div class="col-sm-12 col-lg-1 text-center"><h3>Web Money to bit coin</h3></div>
+		<div class="col-sm-12 col-lg-2 text-center"><input type="text" value="0.00" class="form-control text-right marginTop18"></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Web Money to Perfect Money</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Web Money to Bitcoin</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Bitcoin to Perfect Money</a></div>
+	</div>	
+	<div class="row" ng-show="bctopmon">
+		<div class="col-sm-12 col-lg-1 text-center"><h3>Bit coin to Perfect Money</h3></div>
+		<div class="col-sm-12 col-lg-2 text-center"><input type="text" value="0.00" class="form-control text-right marginTop18"></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Web Money to Perfect Money</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Web Money to Bitcoin</a></div>
+		<div class="col-sm-12 col-lg-3 text-center marginTop18"><a href="#" class="btn btn-primary">Bitcoin to Perfect Money</a></div>
+	</div>	 
+</div> -->
+
+

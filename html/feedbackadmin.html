@@ -1,0 +1,51 @@
+<div>
+	<div class="row">&nbsp;</div>
+	<div class="well">
+		<div class="row">&nbsp;</div>
+		<div class="row">
+			<div class="col-sm-12 col-lg-12 text-center"><h1>Edit Feedback</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-lg-3">
+				<input type="text" ng-hide="true" ng-model="idf" />
+				<input type="text" ng-model="namef" class="form-control" placeholder="Name" />
+			</div>
+			<div class="col-sm-12 col-lg-8"><input type="text" ng-model="messagef" class="form-control" placeholder="Feedback" /></div>
+			<div class="col-sm-12 col-lg-1"><input class="btn btn-success" ng-click="sendFeedback()" type="submit" value="Update"></div>
+		</div>
+		<div class="row">&nbsp;</div>
+		<div class="row">
+			<div class="col-sm-12 col-lg-12 text-center"><h1>Feedbacks</h1></div>
+		</div>
+		<div class="">
+			<div class="row">
+				<div class="col-sm-12 col-lg-12">
+					<table st-table="rowCollections" st-safe-src="rowCollection" class="table table-striped">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Feedback</th>
+								<th>Approved</th>
+								<th>Action</th>
+							</tr>
+							<tr>
+								<th colspan="3"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="row in rowCollections track by $index">
+								<td>{{row.feed_name}}</td>
+								<td>{{row.feedback}}</td>
+								<td>{{row.approved == 1 ? 'Approved' : 'Not Approved'}}</td>
+								<td><button class="btn btn-primary" ng-click="editFeedback(row)" id="btnEdit">Edit</button>
+									<button class="btn btn-primary" ng-click="deleteFeedback(row)" id="btnDelete">Delete</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+

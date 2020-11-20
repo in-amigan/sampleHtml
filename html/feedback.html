@@ -1,0 +1,44 @@
+<div>
+	<div class="row">&nbsp;</div>
+	<div class="well">
+		 
+		<div class="row">&nbsp;</div>
+		<div class="row">
+			<div class="col-sm-12 col-lg-12 text-center"><h1>Your Feedback</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-lg-3"><input type="text" ng-model="namef" class="form-control" placeholder="Name" /></div>
+			<div class="col-sm-12 col-lg-8"><input type="text" ng-model="messagef" class="form-control" placeholder="Feedback" /></div>
+			<div class="col-sm-12 col-lg-1"><input class="btn btn-success" ng-click="sendFeedback()" type="submit" value="Send"></div>
+		</div>
+		<div class="row">&nbsp;</div>
+		<div class="row">
+			<div class="col-sm-12 col-lg-12 text-center"><h1>Others Feedback</h1></div>
+		</div>
+		<div class="">
+			<div class="row">
+				<div class="col-sm-12 col-lg-12">
+					<table st-table="rowCollections" st-safe-src="rowCollection" class="table table-striped">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Feedback</th>
+								<th>Posted On</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="row in rowCollections track by $index">
+								<td>{{row.feed_name}}</td>
+								<td>{{row.feedback}}</td>
+								<td>{{row.created_date | date : "MMM d, y h:mm:ss a"}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+ 

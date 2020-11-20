@@ -1,0 +1,128 @@
+<!doctype html>
+<html ng-app="mzds">
+<head>
+
+	<link rel="icon" 
+	type="image/png" 
+	href="images/favicon.ico" />
+	<title>MZ Data Solutions</title>
+	<meta name="description" content="E-Currency, Money Exchange, Bitcoin, Web Money etc exchange rates">
+
+
+
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="js/angular-cookies.js"></script>
+	<script src="js/smarttable.js"></script>
+	<script src="js/ui-bootstrap-tpls-1.2.5.min.js"></script>
+	<script src="js/ngStorage.js"></script>
+	<script src="js/common.js"></script>
+
+	<script src="js/controller/index_controller.js"></script>
+
+
+
+	<script src="js/factory/dailyRates.js"></script>
+	<script src="js/factory/userFactory.js"></script>
+	<script src="js/factory/contactFactory.js"></script>
+	<script src="js/factory/feedFactory.js"></script>
+
+	<script src="js/controller/contactController.js"></script>
+	<script src="js/controller/loginController.js"></script>
+	<script src="js/controller/ratesController.js"></script>
+	<script src="js/controller/feedbackController.js"></script>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/app.css" rel="stylesheet" type="text/css"/>   
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row" ng-controller="navController">
+			<!-- Header Starts  -->
+			<header>
+
+				<nav class="navbar navbar-default" style="height:70px;" ng-init="isCollapsed = true">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" ng-click="isCollapsed = !isCollapsed" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" style="padding:0px;" href="#/">
+								<div class="row">
+									<div class="col-lg-5 col-sm-12"><img alt="MZ Data Solutions" src="images/mzlogo.png" height="85px" /></div>
+									<!-- <div class="col-lg-7 col-sm-12 lineheightHeader">MZ Data Solutions</div> -->
+								</div>
+							</a>
+						</div>
+
+						<div class="collapse navbar-collapse" uib-collapse="isCollapsed" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right lineheightMenu">
+								<li><a href="#feedbacks">Feedbacks</a></li>
+								<li><a href="#contact">Contact Us</a></li>
+								<li><a href="#terms">Terms</a></li>
+								<li><a href="#faqs">FAQs</a></li>
+								<li ng-if="adminLoggedIn" uib-dropdown><a href id="simple-dropdown" uib-dropdown-toggle>Settings</a>
+									<ul class="dropdown-menu" role="menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+										<li>
+											<a href="#updateRates">Update Rates</a>
+											<a href="#contactMessages">Messages</a>
+											<a href="#feedbackadmin">Feedbacks Approval</a>
+										</li>
+									</ul>
+								</li>
+								<li ng-if="!loginUser"><a href="#login">Login</a></li>
+								<li ng-if="loginUser"><a href="" ng-click="logoutClicked()">Logout</a></li>
+
+															<!-- <li uib-dropdown><a href id="simple-dropdown" uib-dropdown-toggle>Linkss</a>
+									<ul class="dropdown-menu" role="menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+										<li>
+											<a href>1dd</a>
+											<a href>1</a>
+											<a href>1</a>
+											<a href>1</a>
+										</li>
+									</ul>
+								</li> -->
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</header>
+		</div>
+		<!-- Header Ends-->
+		<div class="row">
+		<h1 style="display:none;">Hello</h1>
+		<h2 style="display:none;">Hello</h2>
+		<h3 style="display:none;">Hello</h3>
+			<div id="bodyContent" class="col-md-12">
+				<div ng-view class="slide"></div>
+			</div>
+		</div>
+		<div class="row">&nbsp;</div>
+		<div class="row">
+			<footer>
+				<nav class="navbar navbar-default">
+					<div class="text-center">
+						<a class="navbar-brand">&copy; MZ Data Solutions</a>
+					</div>
+					<div class="collapse navbar-collapse" uib-collapse="isCollapsed" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right lineheightMenu">
+							<li><a href=""><img alt="whatsapp" src="images/whatsappIcon.png" width="32px" /> 00923135056758</a></li>
+							<li><a href=""><img alt="skype" src="images/skypeIcon.png" width="32px" /> mzdatasolutions</a></li>
+							<li><a href=""><img alt="email" src="images/gmailIcon.png" width="32px" /> mzdatasolutions@gmail.com</a></li>
+						</ul>
+					</div>
+				</nav>
+			</footer>
+		</div>
+
+	</div>
+
+
+
+</body>
+</html>
+
